@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { getMe, postLogout } from "../service/user";
 import { useDispatch } from "react-redux";
 import { login, logout } from "../redux/slices/checkLogin";
+import ScrollToTop from "../../utils/scrollToTop";
 
 const RootLayout = () => {
   const dispatch = useDispatch()
@@ -32,6 +33,7 @@ const RootLayout = () => {
     }, [navigate, dispatch]);
   return (
     <div>
+      <ScrollToTop/>
       <Header />
       <div className="bg-gradient-to-t from-[#0e1213] to-[#252f35] min-h-screen w-full">
         <Outlet />
