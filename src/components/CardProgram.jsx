@@ -9,7 +9,7 @@ const CardProgram = ({ program }) => {
       />
       <div className="absolute bottom-[20px] left-0 right-0 w-full px-4 text-gray-50">
         <div className="border-b-[1px] border-b-gray-50 py-1 w-full">
-          <p className="uppercase md:text-[20px] text-[16px] py-1">{program.title}</p>
+          <p className="uppercase md:text-[20px] text-[16px] py-1 w-full truncate">{program.title}</p>
           <div className="flex items-center justify-between text-gray-300">
             <p className="uppercase text-[12px]">
               {program.sessionsPerWeek} buổi/tuần

@@ -40,7 +40,7 @@ const HomePage = () => {
             Gym
           </p>
         </div>
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-3 lg:gap-5 grid-cols-1 gap-0 space-y-2">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-3 lg:gap-5 grid-cols-1 gap-4">
           {isLoading ? (
             <Loading />
           ) : programPublic.length > 0 ? (
