@@ -13,6 +13,7 @@ import PaymentPage from "./pages/PaymentPage.jsx";
 import AccountPage from "./pages/AccountPage.jsx";
 import { store } from "./redux/store.js";
 import { Provider } from "react-redux";
+import NotFound from "./pages/NotFound.jsx";
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "/tai-khoan",
         element: <AccountPage />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

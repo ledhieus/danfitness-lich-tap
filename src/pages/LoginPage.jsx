@@ -1,12 +1,22 @@
 import { Form, Input, message } from "antd";
-import { postLogin } from "../service/user";
+import { getMe, postLogin } from "../service/user";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/slices/checkLogin";
+import { useEffect } from "react";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  useEffect(() => {
+      const fetchApi = async () => {
+        const data = await getMe();
+        if (data.code === 200) {
+          navigate("/", { replace: true });
+        }
+      };
+      fetchApi();
+    }, [navigate]);
   const handleSubmit = async (formData) => {
     const res = await postLogin(formData);
     if (res.code === 200) {

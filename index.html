@@ -16,6 +16,35 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- <script>
+      const API_URL = import.meta.env.VITE_PATH;
+      const fetchUserDataAndRemoveAds = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/client/user/me`, {
+          method: "GET",
+          credentials: "include", // Quan trọng để gửi cookie
+        });
+
+        const data = await response.json(); // Parse JSON
+
+        // Kiểm tra mã phản hồi từ backend
+        if (data.code !== 200) {
+          console.warn("Lỗi xác thực:", data.message);
+          return;
+        }
+
+        console.log("User data:", data.user); // Debug user
+
+        // Nếu user có quyền Premium, ẩn quảng cáo
+        if (data.user?.hasPremium) {
+          document.querySelectorAll('script[data-cfasync="false"]').forEach(script => script.remove());
+        }
+      } catch (error) {
+        console.error("Lỗi khi gọi API:", error);
+      }
+    };
+    document.addEventListener("DOMContentLoaded", fetchUserDataAndRemoveAds);
+  </script> -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

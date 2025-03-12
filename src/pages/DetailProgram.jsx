@@ -11,7 +11,7 @@ import { getSessionById } from "../service/session";
 import { useNavigate, useParams } from "react-router-dom";
 
 const DetailProgram = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [session, setSession] = useState([]);
   const [sessionOriginal, setSessionOriginal] = useState([]);
   const [weeks, setWeeks] = useState([]);
@@ -28,9 +28,13 @@ const DetailProgram = () => {
         );
         setWeeks(weekArray);
       }
+      else {
+        navigate("/404", { replace: true });
+        return;
+      }
     };
     fetchApi();
-  }, [slug]);
+  }, [slug, navigate]);
   useEffect(() => {
     if (infoProgram === null) return;
     const fetchApi = async () => {
@@ -41,22 +45,28 @@ const DetailProgram = () => {
       }
     };
     fetchApi();
-    
   }, [infoProgram]);
-  const handleFilter = (event)=> {
-    const value = event.target.value
-    const filteredData = sessionOriginal.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
-    setSession(filteredData)
-  }
+  const handleFilter = (event) => {
+    const value = event.target.value;
+    const filteredData = sessionOriginal.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setSession(filteredData);
+  };
   return (
     <div className="padding-layout text-white/90 text-[18px]">
-      <div className="mx-4 py-8">
-        <div className="flex gap-2 items-center mb-5 cursor-pointer" onClick={()=> navigate(-1)}>
+      <div className="lg:mx-4 mx-0 lg:py-8 py-4">
+        <div
+          className="flex gap-2 items-center lg:mb-5 mb-2 cursor-pointer text-[16px]"
+          onClick={() => navigate(-1)}
+        >
           <FontAwesomeIcon icon={faAngleLeft} />
           <p>Trở lại</p>
         </div>
         {infoProgram && (
-          <p className="font-bold text-[25px] py-4">{infoProgram.title}</p>
+          <p className="font-bold text-[24px] lg:py-4 py-2">
+            {infoProgram.title}
+          </p>
         )}
         <div className="grid grid-cols-2 gap-4 text-[#acc2ef]">
           <div className="text-center bg-[#3D5A80] rounded-md py-1">
@@ -84,7 +94,8 @@ const DetailProgram = () => {
             <p className="text-[14px]">Chế độ</p>
           </div>
         </div>
-        <select className="bg-[#313B3C]/50 w-full text-center py-2 font-bold text-[16px] text-white/50 border border-[#acc2ef]/50 rounded-lg mt-4"
+        <select
+          className="bg-[#313B3C]/50 w-full text-center py-2 font-bold text-[16px] text-white/50 border border-[#acc2ef]/50 rounded-lg mt-4"
           onChange={handleFilter}
         >
           <option>Lọc</option>
@@ -95,10 +106,11 @@ const DetailProgram = () => {
           ))}
         </select>
         <div className="flex flex-col space-y-5 mt-4">
-          {session.length > 0 &&
-            session.map((item) => (
-              <CardSession key={item._id} session={item}/>
-            ))}
+          {session.length > 0 ? (
+            session.map((item) => <CardSession key={item._id} session={item} />)
+          ) : (
+            <>Đang tải...</>
+          )}
         </div>
       </div>
     </div>

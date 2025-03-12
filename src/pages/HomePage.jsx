@@ -22,7 +22,7 @@ const HomePage = () => {
   }, [activeLocationA]);
   return (
     <div className="padding-layout text-white text-[18px] font-medium">
-      <div className="py-10">
+      <div className="lg:py-10 md:py-6 py-4">
         <p className="md:text-[26px] text-[22px] md:mb-4 mb-2">
           Lịch tập tham khảo
         </p>
@@ -40,7 +40,7 @@ const HomePage = () => {
             Gym
           </p>
         </div>
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-3 lg:gap-5 grid-cols-1 gap-0">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 sm:gap-3 lg:gap-5 grid-cols-1 gap-0 space-y-2">
           {isLoading ? (
             <Loading />
           ) : programPublic.length > 0 ? (

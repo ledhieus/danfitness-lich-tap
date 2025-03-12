@@ -20,7 +20,7 @@ const PrivateCard = () => {
   }, [activeLocation]);
   return (
     <div>
-      <div className="py-10">
+      <div className="lg:py-10 md:py-6 py-4">
         <p className="md:text-[26px] text-[22px] md:mb-4 mb-2">Giáo án</p>
         <div className="flex mb-2 gap-2">
           <p

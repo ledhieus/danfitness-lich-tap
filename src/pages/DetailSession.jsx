@@ -19,10 +19,13 @@ const DetailSession = () => {
       const data = await getDetailSession(`/${id}`);
       if (data) {
         setInfoSession(data);
+      }else {
+        navigate("/404", { replace: true });
+        return;
       }
     };
     fetchApi();
-  }, [id]);
+  }, [id, navigate]);
   useEffect(() => {
     if (infoSession === null) return;
     const fetchApi = async () => {
@@ -37,9 +40,9 @@ const DetailSession = () => {
   }, [infoSession]);
   return (
     <div className="padding-layout text-white">
-      <div className="py-10">
+      <div className="py-4">
         <div
-          className="flex gap-2 items-center mb-5 cursor-pointer"
+          className="flex gap-2 items-center lg:mb-5 mb-2 cursor-pointer"
           onClick={() => navigate(-1)}
         >
           <FontAwesomeIcon icon={faAngleLeft} />

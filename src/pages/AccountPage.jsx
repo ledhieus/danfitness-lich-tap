@@ -21,10 +21,13 @@ const AccountPage = () => {
       if (data.code === 200) {
         setInfoUser(data.user);
       }
+      else{
+        navigate("/", { replace: true });
+      }
       setIsLoading(false);
     };
     fetchApi();
-  }, []);
+  }, [navigate]);
   useEffect(() => {
     if (infoUser === null) return;
     const fetchApi = async () => {
@@ -195,7 +198,7 @@ const AccountPage = () => {
                 )}
               </div>
             </div>
-            <p className="text-[26px] mb-4 text-white/80">Giáo án của bạn</p>
+            <p className="text-[26px] mt-4 mb-2 text-white/80">Giáo án của bạn</p>
             {programPrivate && (
               <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-3 lg:gap-5 gap-0">
                 <CardProgram program={programPrivate} />
