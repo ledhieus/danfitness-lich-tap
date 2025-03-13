@@ -16,7 +16,7 @@ const PaymentPage = () => {
         <div className="mt-4 md:p-4 p-2 bg-white/10 rounded-lg shadow-md">
           <p className="font-semibold  lg:text-[20px] md:text-[18px] text-16px">
             Giáo án tập luyện 8 tuần -{" "}
-            <span className="text-yellow-400 font-bold">Chỉ 149K</span>
+            <span className="text-yellow-400 font-bold">Chỉ 100K</span>
           </p>
         </div>
         <p className="mt-4 text-gray-300">
@@ -24,7 +24,7 @@ const PaymentPage = () => {
         </p>
         <div className="mt-6">
           <a
-            href="m.me/100504566338813"
+            href="https://m.me/100504566338813"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white font-bold px-6 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-blue-500 transition"

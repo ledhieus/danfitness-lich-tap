@@ -7,6 +7,7 @@ import { getExcercise } from "../service/excercise";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LockContent from "../components/LockContent";
+import Banner from "../components/Banner";
 const DetailSession = () => {
   const { id } = useParams();
 
@@ -40,6 +41,9 @@ const DetailSession = () => {
   }, [infoSession]);
   return (
     <div className="padding-layout text-white">
+      <div className="pt-4">
+        <Banner />
+      </div>
       <div className="py-4">
         <div
           className="flex gap-2 items-center lg:mb-5 mb-2 cursor-pointer"

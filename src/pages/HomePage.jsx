@@ -3,6 +3,7 @@ import CardProgram from "../components/CardProgram";
 import { getProgram } from "../service/program";
 import PrivateCard from "../components/PrivateCard";
 import Loading from "../components/Loading";
+import Banner from "../components/Banner";
 
 const HomePage = () => {
   const [programPublic, setProgramPublic] = useState([]);
@@ -22,6 +23,9 @@ const HomePage = () => {
   }, [activeLocationA]);
   return (
     <div className="padding-layout text-white text-[18px] font-medium">
+      <div className="pt-4">
+        <Banner />
+      </div>
       <div className="lg:py-10 md:py-6 py-4">
         <p className="md:text-[26px] text-[22px] md:mb-4 mb-2">
           Lịch tập tham khảo

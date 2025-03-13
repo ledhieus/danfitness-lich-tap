@@ -17,7 +17,7 @@ const LockContent = () => {
           Bạn cần phải đăng ký để xem nội dung này
         </p>
         <p className="text-yellow-400 font-bold mt-2">
-          Chỉ với <span className="text-xl">149K</span> – giáo án 8 tuần
+          Chỉ với <span className="text-xl">100K</span> – giáo án 8 tuần
         </p>
 
         {/* Nút đăng ký */}

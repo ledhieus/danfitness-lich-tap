@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { getDetailProgram } from "../service/program";
 import { getSessionById } from "../service/session";
 import { useNavigate, useParams } from "react-router-dom";
+import Banner from "../components/Banner";
 
 const DetailProgram = () => {
   const navigate = useNavigate();
@@ -55,6 +56,9 @@ const DetailProgram = () => {
   };
   return (
     <div className="padding-layout text-white/90 text-[18px]">
+      <div className="pt-2">
+        <Banner />
+      </div>
       <div className="lg:mx-4 mx-0 lg:py-8 py-4">
         <div
           className="flex gap-2 items-center lg:mb-5 mb-2 cursor-pointer text-[16px]"
