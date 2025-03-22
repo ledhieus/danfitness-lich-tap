@@ -28,7 +28,20 @@ const CardExercise = ({ exercises }) => {
         <div
           className="flex gap-2 items-center underline cursor-pointer md:text-[16px] text-[14px]"
           onClick={() => {
-            setisShowing(true), setContent(<img src={exercises.image} />);
+            setisShowing(true);
+            setContent(
+              exercises.image ? (
+                <img src={exercises.image} alt="Exercise" />
+              ) : (
+                <div className="w-full max-w-3xl mx-auto aspect-video">
+                  <iframe
+                    className="w-full h-full"
+                    src={exercises.linkYoutube}
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )
+            );
           }}
         >
           <FontAwesomeIcon icon={faEye} />
